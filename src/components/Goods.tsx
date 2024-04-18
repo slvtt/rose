@@ -1,8 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { it } from "node:test";
 import HeartIcon from "@/assets/icons/HeartIcon";
 import PlusIcon from "@/assets/icons/PlusIcon";
+import firstItem from "@/assets/images/hits/1.png";
+import secondItem from "@/assets/images/hits/2.png";
+import thirdItem from "@/assets/images/hits/3.png";
+import fourItem from "@/assets/images/hits/4.png";
+import fiveItem from "@/assets/images/hits/5.png";
+import sixItem from "@/assets/images/hits/6.png";
+import sevenItem from "@/assets/images/hits/7.png";
+import eightItem from "@/assets/images/hits/8.png";
 
 interface GoodsProps {
   items: Array<{
@@ -19,29 +26,25 @@ export const hits = [
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    image: firstItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 2200,
+    image: secondItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 1500,
+    image: thirdItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 1650,
+    image: fourItem.src,
   },
 ];
 
@@ -49,30 +52,26 @@ export const news = [
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 1999,
+    image: fiveItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    image: sixItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 2900,
+    image: sevenItem.src,
   },
   {
     title: "Проблески утреннего восхода",
     subtitle: "Кустовые розы, хризантемы, розы",
-    price: 2100,
-    image:
-      "https://i.pinimg.com/564x/81/bc/d2/81bcd29a208b910f09e836302f616282.jpg",
+    price: 3099,
+    image: eightItem.src,
   },
 ];
 
@@ -83,7 +82,7 @@ const Goods: React.FC<GoodsProps> = ({ items, blockTitle }) => {
       <div className="flex justify-between">
         {items.map((item, index) => (
           <div className="flex flex-col" key={item.title + index}>
-            <div className="border-[#890909] border-solid border-2 mb-[28px]">
+            <div className="mb-[28px]">
               {" "}
               <Image
                 src={item.image}
