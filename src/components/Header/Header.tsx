@@ -1,26 +1,35 @@
 import React from "react";
 import HeartIcon from "@/assets/icons/HeartIcon";
 import CardIcon from "@/assets/icons/CardIcon";
+import Link from "next/link";
 
 interface HeaderProps {}
-const tabs = ["Каталог", "Доставка", "О нас"];
+const tabs = [
+  { title: "Каталог", href: "/" },
+  { title: "Доставка", href: "/delivery" },
+  { title: "О нас", href: "/" },
+];
 const Header: React.FC<HeaderProps> = () => {
   return (
     <div className="w-full bg-[#61000F] text-[#FFD3DA] py-5 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between">
         <div className="flex gap-[134px]">
-          <span className="text-2xl">Rose 73</span>
+          <Link href="/" className="text-2xl">
+            Rose 73
+          </Link>
           <div className="flex gap-[34px]">
             {tabs.map((tab) => (
-              <span key={tab} className="text-2xl">
-                {tab}
-              </span>
+              <Link href={tab.href} key={tab.title} className="text-2xl">
+                {tab.title}
+              </Link>
             ))}
           </div>
         </div>
         <div className="flex gap-[37px] items-center">
           <HeartIcon />
-          <CardIcon />
+          <Link href="/basket">
+            <CardIcon />
+          </Link>
         </div>
       </div>
     </div>

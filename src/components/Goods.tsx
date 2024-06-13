@@ -83,7 +83,6 @@ const Goods: React.FC<GoodsProps> = ({ items, blockTitle }) => {
         {items.map((item, index) => (
           <div className="flex flex-col" key={item.title + index}>
             <div className="mb-[28px]">
-              {" "}
               <Image
                 src={item.image}
                 alt={item.title}

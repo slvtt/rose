@@ -11,15 +11,13 @@ import Reasons from "@/components/Reasons";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
+    <section>
       <MainInfo />
       <RangeComponent />
       <Goods blockTitle="Предлагаем присмотретьcя" items={hits} />
       <Goods blockTitle="Новинки" items={news} />
       <Reasons />
       <Reviews />
-      <Footer />
-    </main>
+    </section>
   );
 }
