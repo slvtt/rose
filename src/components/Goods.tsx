@@ -10,11 +10,15 @@ import fiveItem from "@/assets/images/hits/5.png";
 import sixItem from "@/assets/images/hits/6.png";
 import sevenItem from "@/assets/images/hits/7.png";
 import eightItem from "@/assets/images/hits/8.png";
+import { useDispatch } from "react-redux";
+import { addItem } from "@/store/basketSlice/backetSlice";
+import GoodItem from "@/components/GoodItem/GoodItem";
 
 interface GoodsProps {
   items: Array<{
     image: string;
     title: string;
+    id: number;
     subtitle: string;
     price: number;
   }>;
@@ -24,24 +28,28 @@ interface GoodsProps {
 export const hits = [
   {
     title: "Проблески утреннего восхода",
+    id: 1,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2100,
     image: firstItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 2,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2200,
     image: secondItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 3,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 1500,
     image: thirdItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 4,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 1650,
     image: fourItem.src,
@@ -51,24 +59,28 @@ export const hits = [
 export const news = [
   {
     title: "Проблески утреннего восхода",
+    id: 5,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 1999,
     image: fiveItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 6,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2100,
     image: sixItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 7,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 2900,
     image: sevenItem.src,
   },
   {
     title: "Проблески утреннего восхода",
+    id: 8,
     subtitle: "Кустовые розы, хризантемы, розы",
     price: 3099,
     image: eightItem.src,
@@ -76,41 +88,13 @@ export const news = [
 ];
 
 const Goods: React.FC<GoodsProps> = ({ items, blockTitle }) => {
+  const dispatch = useDispatch();
   return (
     <div className="container mx-auto mt-[80px]">
       <h3 className="text-6xl mb-[60px] text-[#A74D5B]">{blockTitle}</h3>
       <div className="flex justify-between">
         {items.map((item, index) => (
-          <div className="flex flex-col" key={item.title + index}>
-            <div className="mb-[28px]">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={279}
-                height={373}
-              />
-            </div>
-
-            <span className="inline-block mb-[8px] text-[#A74D5B]">
-              {item.title}
-            </span>
-            <span className="inline-block mb-[14px] text-[#A74D5B] text-xs">
-              {item.subtitle}
-            </span>
-            <div className="flex justify-between">
-              <div className="flex gap-[8px]">
-                <div className="flex  text-[#A74D5B] items-center justify-center text-2xl w-[90px] bg-[#FFD3DA] h-[44px] cursor-pointer rounded-md">
-                  {item.price}₽
-                </div>
-                <div className="flex items-center justify-center w-[60px] bg-[#FFD3DA] h-[44px] cursor-pointer rounded-md">
-                  <PlusIcon color="#A74D5B" />
-                </div>
-              </div>
-              <div className="flex items-center justify-center w-[60px] bg-[#FFD3DA] h-[44px] cursor-pointer rounded-md">
-                <HeartIcon color="#A74D5B" />
-              </div>
-            </div>
-          </div>
+          <GoodItem item={item} key={item.title + index} />
         ))}
       </div>
     </div>

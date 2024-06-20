@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "@/app/providers";
+import { StoreProvider, ThemeProvider } from "@/app/providers";
 import Header from "@/components/Header/Header";
 import React from "react";
 import Footer from "@/components/Footer";
@@ -30,26 +30,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-[#FFD3DA] flex flex-col">
-        <Providers>
-          <div className="flex flex-col  min-h-[100dvh] ">
-            <Header />
-            <main className="flex flex-[1] pb-[80px] container mx-auto pt-[30px]">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="ru">
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"
+            rel="stylesheet"
+          />
+        </head>
+        <body className="bg-[#FFD3DA] flex flex-col">
+          <ThemeProvider>
+            <div className="flex flex-col  min-h-[100dvh] ">
+              <Header />
+              <main className="flex flex-[1] pb-[80px] container mx-auto pt-[30px]">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

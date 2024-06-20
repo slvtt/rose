@@ -9,6 +9,7 @@ import sixItem from "@/assets/images/hits/6.png";
 import sevenItem from "@/assets/images/hits/7.png";
 import eightItem from "@/assets/images/hits/8.png";
 import Empty from "@/components/Empty/Empty";
+import Basket from "@/components/Basket/Basket";
 
 const news = [
   {
@@ -47,7 +48,7 @@ export default function Page() {
         </Link>
       </div>
       <div>
-        <Empty />
+        <Basket />
       </div>
       <div>
         <span className="text-5xl text-[#A74D5B] inline-block mb-[16px]">

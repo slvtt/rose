@@ -6,7 +6,7 @@ interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <div className="bg-[#61000F] ">
+    <div className="bg-[#61000F] text-[white]">
       <div className="container mx-auto py-[69px] flex justify-between">
         <div className="flex flex-col gap-[31px]">
           <span>ROSE 73</span>

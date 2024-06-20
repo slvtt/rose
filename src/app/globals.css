@@ -17,7 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #890909;
   background:#FFF4F7;
   font-family: "Nanum Myeongjo", serif;
   font-weight: 400;

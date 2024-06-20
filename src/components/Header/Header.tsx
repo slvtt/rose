@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface HeaderProps {}
 const tabs = [
-  { title: "Каталог", href: "/" },
+  { title: "Каталог", href: "/catalog" },
   { title: "Доставка", href: "/delivery" },
   { title: "О нас", href: "/" },
 ];

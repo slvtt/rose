@@ -10,7 +10,7 @@ const Empty: React.FC<EmptyProps> = () => {
         Ваша корзина пуста
       </h3>
       <Link
-        href="/"
+        href="/catalog"
         className="text-[#130101] text-center w-full text-xl block"
       >
         Нажмите здесь, чтобы продолжить покупки
