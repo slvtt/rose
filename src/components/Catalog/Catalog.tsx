@@ -13,11 +13,12 @@ const Catalog: React.FC<CatalogProps> = () => {
   return (
     <div className="flex flex-col gap-[56px] w-full">
       {categories.map((category) => (
-        <div key={category.title}>
+        <div key={category.title} id={category.blockId}>
           <span className="text-[56px] text-center">{category.title}</span>
           <div className="grid grid-cols-4 gap-[24px]">
             {category.items.map((item) => (
               <Item
+                image={item.image}
                 key={item.name}
                 name={item.name}
                 id={item.id}

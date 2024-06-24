@@ -31,6 +31,7 @@ const Basket: React.FC<BasketProps> = () => {
           <Item
             name={item.flower.name}
             id={item.flower.id}
+            image={item.flower.image}
             key={item.flower.id}
             price={item.flower.price}
             onRemoveItem={() => dispatch(removeItem(item.flower))}

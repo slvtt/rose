@@ -7,7 +7,7 @@ interface HeaderProps {}
 const tabs = [
   { title: "Каталог", href: "/catalog" },
   { title: "Доставка", href: "/delivery" },
-  { title: "О нас", href: "/" },
+  { title: "О нас", href: "/about" },
 ];
 const Header: React.FC<HeaderProps> = () => {
   return (
@@ -26,7 +26,6 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         </div>
         <div className="flex gap-[37px] items-center">
-          <HeartIcon />
           <Link href="/basket">
             <CardIcon />
           </Link>

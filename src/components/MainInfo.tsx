@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import mainImage from "@/assets/images/main.png";
+import Link from "next/link";
 
 interface MainInfoProps {}
 
@@ -19,12 +20,12 @@ const MainInfo: React.FC<MainInfoProps> = () => {
             какие-то смыслы, закономерности и причины. Любовь просто есть. А
             показать её можно с помощью наших букетов.
           </p>
-          <Button
-            variant="bordered"
-            className="mt-[46px] max-w-[280px] h-[66px] text-[#A74D5B] text-2xl border-[#890909] rounded-none"
+          <Link
+            href="#good1"
+            className=" border-solid border-[#A74D5B] border-[1px] flex justify-center items-center mt-[46px] max-w-[280px] h-[66px] text-[#A74D5B] text-2xl border-[#890909] rounded-none"
           >
             Заказать
-          </Button>
+          </Link>
         </div>
         <div className="relative w-[443px] h-[506px]">
           <div className="absolute w-[443px] h-[506px] bottom-[20px] right-[20px] border-[#A74D5B] border-1"></div>

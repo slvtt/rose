@@ -12,19 +12,45 @@ import hris2Image from "@/assets/images/hris2.png";
 import altstro from "@/assets/images/altstro.png";
 import gortenImage from "@/assets/images/gorten.png";
 import romImage from "@/assets/images/rom.png";
+import Link from "next/link";
 
 interface RangeProps {}
 const data = [
-  { title: "РОЗЫ", image: roseImage },
-  { title: "КУСТОВЫЕ РОЗЫ", image: rose2Image },
-  { title: "ОДНОГОЛОВЫЕ ХРИЗАНТЕМЫ", image: hrisImage },
-  { title: "КУСТОВЫЕ ХРИЗАНТЕМЫ", image: hris2Image },
-  { title: "ГОРТЕНЗИИ", image: gortenImage },
+  { title: "РОЗЫ", image: roseImage, id: "rose", href: "/catalog#rose" },
+  {
+    title: "КУСТОВЫЕ РОЗЫ",
+    image: rose2Image,
+    id: "kustRose",
+    href: "/catalog#kustRose",
+  },
+  {
+    title: "ОДНОГОЛОВЫЕ ХРИЗАНТЕМЫ",
+    image: hrisImage,
+    id: "odinHris",
+    href: "/catalog#odinHris",
+  },
+  {
+    title: "КУСТОВЫЕ ХРИЗАНТЕМЫ",
+    image: hris2Image,
+    id: "odinHris",
+    href: "/catalog#odinHris",
+  },
+  {
+    title: "ГОРТЕНЗИИ",
+    image: gortenImage,
+    id: "gorten",
+    href: "/catalog#gorten",
+  },
   { title: "ПИОНЫ", image: pions },
-  { title: "ТЮЛЬПАНЫ", image: tulp },
-  { title: "ЛИЛИИ", image: lili },
-  { title: "РОМАШКИ", image: romImage },
-  { title: "АЛЬСТРОМЕРИИ", image: altstro },
+  { title: "ГИПСОФИЛЫ", image: tulp, id: "pions", href: "/catalog#gips" },
+  { title: "ЛИЛИИ", image: lili, id: "lili", href: "/catalog#lili" },
+  {
+    title: "ГЕРБЕРЫ",
+    image: romImage,
+    id: "gerber",
+    href: "/catalog#gerber",
+  },
+  { title: "ДИАНТУСЫ", image: altstro, href: "/catalog#diantus" },
   { title: "ИГРУШКИ", image: toysImage },
   { title: "ОТКРЫТКИ", image: booksImage },
 ];
@@ -48,9 +74,18 @@ const RangeComponent: React.FC<RangeProps> = () => {
                     />
                   </div>
                 </div>
-                <span className="break-words w-[106px] text-xs inline-block mt-[20px] text-center text-[#A74D5B]">
-                  {item.title}
-                </span>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="break-words w-[106px] text-xs inline-block mt-[20px] text-center text-[#A74D5B]"
+                  >
+                    {item.title}
+                  </Link>
+                ) : (
+                  <span className="break-words w-[106px] text-xs inline-block mt-[20px] text-center text-[#A74D5B]">
+                    {item.title}
+                  </span>
+                )}
               </div>
               {index !== data.length - 1 && (
                 <div

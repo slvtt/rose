@@ -1,10 +1,12 @@
 import React from "react";
 import HeartIcon from "@/assets/icons/HeartIcon";
 import { useSelector } from "@/store/hooks";
+import Image from "next/image";
 
 interface ItemProps {
   name: string;
   id: number;
+  image: string;
   price: number;
   onAddToBasket: () => void;
   onRemoveItem: () => void;
@@ -13,6 +15,7 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({
   name,
   price,
+  image,
   id,
   onAddToBasket,
   onRemoveItem,
@@ -24,7 +27,9 @@ const Item: React.FC<ItemProps> = ({
 
   return (
     <div className="flex flex-col gap-[16px] max-w-[319px]">
-      <div className="w-[319px] h-[397px]"></div>
+      <div className="w-[319px] h-[397px] relative overflow-hidden">
+        <Image src={image} alt={"name"} fill />
+      </div>
       <div className="flex flex-col gap-[8px]">
         <span className="text-[24px] min-h-[80px]">{name}</span>
         <div className="flex justify-between w-full items-center">
@@ -47,9 +52,6 @@ const Item: React.FC<ItemProps> = ({
             >
               +
             </button>
-          </div>
-          <div>
-            <HeartIcon />
           </div>
         </div>
       </div>

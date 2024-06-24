@@ -26,7 +26,6 @@ export const basketSlice = createSlice({
       const itemIndex = state.items.findIndex(
         (item) => item?.flower?.id === action?.payload?.id,
       );
-      console.log(itemIndex);
 
       if (itemIndex !== -1) {
         state.items[itemIndex].count -= 1;
@@ -35,9 +34,12 @@ export const basketSlice = createSlice({
         }
       }
     },
+    clearBasket: (state) => {
+      state.items = [];
+    },
   },
 });
 
-export const { addItem, removeItem } = basketSlice.actions;
+export const { addItem, removeItem, clearBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;

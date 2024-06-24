@@ -19,10 +19,9 @@ const GoodItem: React.FC<GoodItemProps> = ({ item }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="mb-[28px]">
-        <Image src={item.image} alt={item.title} width={279} height={373} />
+      <div className="mb-[28px] w-[279px] h-[373px] relative overflow-hidden">
+        <Image src={item.image} alt={item.title} fill />
       </div>
-
       <span className="inline-block mb-[8px] text-[#A74D5B]">{item.title}</span>
       <span className="inline-block mb-[14px] text-[#A74D5B] text-xs">
         {item.subtitle}
@@ -42,6 +41,7 @@ const GoodItem: React.FC<GoodItemProps> = ({ item }) => {
                       name: item.title,
                       id: item.id,
                       price: item.price,
+                      image: item.image,
                     }),
                   )
                 }
@@ -59,15 +59,13 @@ const GoodItem: React.FC<GoodItemProps> = ({ item }) => {
                   name: item.title,
                   id: item.id,
                   price: item.price,
+                  image: item.image,
                 }),
               )
             }
           >
             <PlusIcon color="#A74D5B" />
           </div>
-        </div>
-        <div className="flex items-center justify-center w-[60px] bg-[#FFD3DA] h-[44px] cursor-pointer rounded-md">
-          <HeartIcon color="#A74D5B" />
         </div>
       </div>
     </div>
